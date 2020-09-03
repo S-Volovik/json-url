@@ -24,7 +24,7 @@ const Main = (props) => {
 			const fetchUrl = async () => {
 				try {
 					const res = await axios.get(
-						`http://api-demo.cognitiveadscience.com/analyze-demo?url=${props.url}`,
+						`https://demo.cognitiveadscience.com/analyze-demo?url=${props.url}`,
 						{
 							mode: 'no-cors',
 						}
