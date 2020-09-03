@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// components
+import Main from './components/Main';
+import Code from './components/Code';
+import Header from './components/Header';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const App = () => {
+	const [json_data, setJSONData] = useState('');
+	const [url, setUrl] = useState('');
+	const [url_error, setUrlError] = useState('');
+	const [loading, setLoading] = useState(false);
+	const [timer, setTimer] = useState('');
+
+	return (
+		<>
+			<div className="container">
+				<Header />
+				<Main
+					json_data={json_data}
+					setJSONData={setJSONData}
+					url={url}
+					setUrl={setUrl}
+					url_error={url_error}
+					setUrlError={setUrlError}
+					setLoading={setLoading}
+					timer={timer}
+					setTimer={setTimer}
+				/>
+				{loading && <CircularProgress className="logo__loading" />}
+				{timer && (
+					<h2 className="speed__header">
+						Request-response speed: {timer} ms.
+					</h2>
+				)}
+				{!loading && json_data && <Code json_data={json_data} />}
+			</div>
+		</>
+	);
+};
 
 export default App;
