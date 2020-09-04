@@ -24,13 +24,15 @@ const Main = (props) => {
 					const res = await axios.get(
 						`https://api-demo.cognitiveadscience.com/analyze-demo?url=${props.url}/`,
 						{
-							credentials: 'include',
 							mode: 'no-cors',
 						}
 					);
+					
+					// set time
 					props.setTimer(res.data.time);
 					delete res.data.time;
-					// get data
+
+					// set json data
 					props.setJSONData(res.data);
 
 					props.setLoading(false);
@@ -82,7 +84,7 @@ const Main = (props) => {
 					Submit
 				</Button>
 				{props.url_error && (
-					<span key={new Date()} className="input__error">{props.url_error}</span>
+					<span className="input__error">{props.url_error}</span>
 				)}
 			</div>
 		</main>
