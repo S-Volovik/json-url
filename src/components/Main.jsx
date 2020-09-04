@@ -14,7 +14,7 @@ const style = {
 const Main = (props) => {
 	const getJSON = (e) => {
 		e.preventDefault();
-		console.log(props.url);
+
 		props.setTimer('');
 		props.setLoading(true);
 
@@ -22,7 +22,7 @@ const Main = (props) => {
 			const fetchUrl = async () => {
 				try {
 					const res = await axios.get(
-						`https://api-demo.cognitiveadscience.com/analyze-demo?url=${props.url}`,
+						`https://api-demo.cognitiveadscience.com/analyze-demo?url=${props.url}/`,
 						{
 							credentials: 'include',
 							mode: 'no-cors',
