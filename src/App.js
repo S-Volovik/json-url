@@ -31,9 +31,9 @@ const App = () => {
 				/>
 				{loading && <CircularProgress className="logo__loading" />}
 				{timer && (
-					<h2 className="speed__header">
-						Request-response speed: {timer} ms.
-					</h2>
+					<span className="speed__header">
+						Request-response speed: <strong>{timer} ms</strong>.
+					</span>
 				)}
 				{!loading && json_data && <Code json_data={json_data} />}
 			</div>
