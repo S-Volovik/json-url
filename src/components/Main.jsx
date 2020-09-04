@@ -66,6 +66,11 @@ const Main = (props) => {
 					type="text"
 					placeholder="Your url..."
 					onChange={(e) => props.setUrl(e.target.value)}
+					onKeyDown={(e) => {
+						if (e.keyCode === 13) {
+							getJSON(e);
+						}
+					}}
 					value={props.url}
 				/>
 				<Button
