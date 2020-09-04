@@ -30,8 +30,6 @@ const Main = (props) => {
 
 					// set time
 					props.setTimer(res.data.time);
-					console.log('data-time', res.data.time);
-					console.log('data',res.data);
 					delete res.data.time;
 
 					// set json data

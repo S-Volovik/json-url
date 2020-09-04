@@ -1,9 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 6 version
+*/
+
 /* header */
 .header {
 	padding-top: 30px;
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 }
 
@@ -21,7 +36,14 @@
 	margin: 0 auto;
 	padding: 0 15px;
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -29,6 +51,8 @@
 .main {
 	width: 100%;
 	margin-top: 100px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -48,6 +72,8 @@
 	padding: 20px 115px 20px 10px;
 
 	font-size: 16px;
+
+	-webkit-box-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.3);
 
 	box-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.3);
 	border: none;
@@ -70,6 +96,8 @@
 	position: relative;
 	top: 20%;
 	left: 50%;
+	-webkit-transform: translate(-20%, -50%);
+	-ms-transform: translate(-20%, -50%);
 	transform: translate(-20%, -50%);
 	z-index: 999999;
 }
@@ -82,12 +110,23 @@
 	padding: 15px;
 
 	background-color: white;
+	-webkit-box-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.3);
 }
 
 .speed__header {
-	margin-top: 50px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	margin-top: 70px;
 
 	font-size: 20px;
 	text-align: center;
+}
+
+.timer__strong {
+	margin-left: 10px;
 }
