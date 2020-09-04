@@ -82,7 +82,7 @@ const Main = (props) => {
 					Submit
 				</Button>
 				{props.url_error && (
-					<span className="input__error">{props.url_error}</span>
+					<span key={new Date()} className="input__error">{props.url_error}</span>
 				)}
 			</div>
 		</main>

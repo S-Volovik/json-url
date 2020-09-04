@@ -31,7 +31,10 @@ const App = () => {
 				/>
 				{loading && <CircularProgress className="logo__loading" />}
 				{timer && (
-					<span className="speed__header">
+					<span
+						key={new Date()}
+						className="speed__header"
+					>
 						Request-response speed: <strong>{timer} ms</strong>.
 					</span>
 				)}
