@@ -24,6 +24,7 @@ const Main = (props) => {
 					const res = await axios.get(
 						`https://api-demo.cognitiveadscience.com/analyze-demo?url=${props.url}`,
 						{
+							credentials: 'include',
 							mode: 'no-cors',
 						}
 					);
@@ -62,7 +63,7 @@ const Main = (props) => {
 			<div className="search">
 				<input
 					type="text"
-					placeholder="Your url..."
+					placeholder="Enter the URL..."
 					onChange={(e) => props.setUrl(e.target.value)}
 					onKeyDown={(e) => {
 						if (e.keyCode === 13) {
