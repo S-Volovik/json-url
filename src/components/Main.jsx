@@ -19,8 +19,6 @@ const Main = (props) => {
 		props.setLoading(true);
 
 		if (props.url !== undefined && props.url !== '') {
-			let d = new Date().getTime();
-
 			const fetchUrl = async () => {
 				try {
 					const res = await axios.get(
@@ -29,8 +27,8 @@ const Main = (props) => {
 							mode: 'no-cors',
 						}
 					);
-					props.setTimer(new Date().getTime() - d);
-
+					props.setTimer(res.data.time);
+					delete res.data.time;
 					// get data
 					props.setJSONData(res.data);
 
