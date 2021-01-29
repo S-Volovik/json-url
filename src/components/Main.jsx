@@ -24,6 +24,8 @@ const Main = (props) => {
 					const res = await axios.get(
 						`https://api-demo.cognitiveadscience.com/analyze-demo?url=${props.url}/`,
 						{
+							'Content-Type': 'application/json',
+							'Access-Control-Allow-Origin': '*',
 							mode: 'no-cors',
 						}
 					);
